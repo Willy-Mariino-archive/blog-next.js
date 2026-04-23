@@ -1,4 +1,6 @@
 import { getAllPosts } from "@/lib/posts"
+import PostCard from "@/components/PostCard";
+
 export default function Home() {
 
 
@@ -8,14 +10,16 @@ export default function Home() {
     <div>
       <h1>ciao</h1>
 
-      {
-        allPost.map((post, index) => (
-          <div key={index}>
-            {post.title}
-          </div>
-        )
-        )
-      }
+      <div className="posts-list">
+        {
+          allPost.map((post) => (
+
+            <PostCard post={post} key={post.slug} />
+
+          )
+          )
+        }
+      </div>
 
     </div>
   );
